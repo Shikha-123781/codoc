@@ -1,0 +1,16 @@
+ <div align="center">
+  <form [formGroup]="group" id="form">
+  	username : <input type="text" placeholder="username" formControlName = "username">
+   <span *ngIf="submitted && group.get('username').errors && group.get('username').errors.required">username is required</span>
+    <br>
+    <span *ngIf="submitted && group.get('username').errors && group.get('username').errors.exist">invalid username</span> 
+    <br>
+     password: <input type="text" placeholder="password" formControlName = "password">
+    <span *ngIf="submitted && group.get('password').errors && group.get('password').errors.required">passwordis required</span>
+    <br>
+   
+    <span *ngIf="submitted && group.get('password').errors && group.get('password').errors.passwordMatch">wrong password</span> 
+    <br>
+    <button (click)="onSubmit()">Submit</button>
+  </form>
+ </div>
